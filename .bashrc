@@ -9,4 +9,3 @@ alias ls='ls -Glt'
 
 #ls -Gのカラー設定
 export LSCOLORS=gxfxcxdxbxegedabagacad
-
