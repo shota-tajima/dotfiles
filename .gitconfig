@@ -1,3 +1,5 @@
 [user]
 	name = shota-reverie
 	email = reverie.1026@gmail.com
+[core]
+	excludesfile = /Users/tajimashouta/.gitignore
