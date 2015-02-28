@@ -4,7 +4,6 @@ function! s:WithoutBundles()
     colorscheme desert
     " その他の処理
 endfunction
-
 " NeoBundle よるプラグインのロードと各プラグインの初期化
 function! s:LoadBundles()
     " 読み込むプラグインの指定
@@ -20,22 +19,13 @@ function! s:LoadBundles()
     " NeoBundle 'taichouchou2/html5.vim'
     NeoBundle 'marijnh/tern_for_vim'
     NeoBundle 'kchmck/vim-coffee-script'
-    NeoBundle 'tyru/caw.vim.git' "コメントアウトの設定
-    " コメントアウトの設定
-    nmap // <Plug>(caw:i:toggle)
-    vmap // <Plug>(caw:i:toggle)
+    NeoBundle 'tyru/caw.vim.git' "コメントアウト
     " if_luaが有効ならneocompleteを使う
     NeoBundle has('lua') ? 'Shougo/neocomplete' : 'Shougo/neocomplcache'
     " ...
     " 読み込んだプラグインの設定
-    " NERDTreeの設定----------
-    " 隠しファイルをデフォルトで表示させる
-    let NERDTreeShowHidden = 1
-    " デフォルトでツリーを表示させる
-    "autocmd VimEnter * execute 'NERDTree'
     " ...
 endfunction
-
 " NeoBundle がインストールされているなら LoadBundles() を呼び出す
 " そうでないなら WithoutBundles() を呼び出す
 function! s:InitNeoBundle()
@@ -54,9 +44,7 @@ function! s:InitNeoBundle()
     else
         call s:WithoutBundles()
     endif
-
     NeoBundleCheck
-
     filetype indent plugin on
     syntax on
 endfunction
@@ -72,7 +60,7 @@ set expandtab     " タブ入力を複数の空白入力に置き換える
 set scrolloff=8   " 上下8行の視界を確保
 set hlsearch   " 検索文字列をハイライトする
 set incsearch  " インクリメンタルサーチを行う
-nnoremap <Esc><Esc> :<C-u>set nohlsearch<Return>
+nnoremap <Esc><Esc> :<C-u>set nohlsearch<Return>   " ハイライトを消す
 set ignorecase " 大文字と小文字を区別しない
 set smartcase  " 大文字と小文字が混在した言葉で検索を行った場合に限り、大文字と小文字を区別する
 set wrapscan   " 最後尾まで検索を終えたら次の検索で先頭に移る
@@ -80,10 +68,18 @@ set gdefault   " 置換の時 g オプションをデフォルトで有効にす
 set backspace=start,eol,indent
 " マウスの入力を受け付ける
 set mouse=a
-
 " コマンドラインモードでTABキーによるファイル名補完を有効にする
 set wildmenu wildmode=list:longest,full
 
+"キーマッピング
+nmap // <Plug>(caw:i:toggle)
+vmap // <Plug>(caw:i:toggle)
+nnoremap [unite]    <Nop>
+nmap     <Space>u [unite]
+"nnoremap <silent> [unite]c   :<C-u>UniteWithCurrentDir -buffer-name=files buffer file_mru bookmark file<CR>
+nnoremap <silent> [unite]b   :<C-u>Unite buffer<CR>
+nnoremap <silent> [unite]f   :<C-u>Unite file<CR>
+nnoremap <silent> [unite]r   :<C-u>Unite file_mru<CR>
 
 "コード補完neocompleteの設定
 if neobundle#is_installed('neocomplete')
