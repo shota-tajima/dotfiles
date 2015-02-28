@@ -3,3 +3,8 @@
 	email = reverie.1026@gmail.com
 [core]
 	excludesfile = /Users/tajimashouta/.gitignore
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
