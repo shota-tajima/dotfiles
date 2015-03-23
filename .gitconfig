@@ -1,3 +1,5 @@
 [user]
 	name = shout-reverie
 	email = reverie.1026@gmail.com
+[push]
+	default = matching
