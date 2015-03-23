@@ -2,9 +2,8 @@ caw.vim
 emmet-vim
 jellybeans.vim
 neobundle.vim
-neocomplete
+neocomplcache
 open-browser.vim
-tern_for_vim
 unite.vim
 vim-browsereload-mac
 vim-coffee-script

@@ -1,12 +1,12 @@
-#macvimをターミナル上で呼び出す
-alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
-alias vi=vim
-alias vimdiff=/Applications/MacVim.app/Contents/MacOS/vimdiff
-alias view=/Applications/MacVim.app/Contents/MacOS/view
-
 #lsのオプション設定
-alias ls='ls -Glt'
-alias lsa='ls -Glta'
+alias ls='ls -G'
+alias lsa='ls -AG'
+alias lsl='ls -Galt'
 
 #ls -Gのカラー設定
 export LSCOLORS=gxfxcxdxbxegedabagacad
+
+# show dot-files
+alias dfon="defaults write com.apple.finder AppleShowAllFiles true|killall Finder"
+# hidden dot-files
+alias dfoff="defaults write com.apple.finder AppleShowAllFiles false|killall Finder"

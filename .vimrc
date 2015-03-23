@@ -16,8 +16,6 @@ function! s:LoadBundles()
     NeoBundle 'mattn/webapi-vim'
     NeoBundle 'tell-k/vim-browsereload-mac'
     NeoBundle 'hail2u/vim-css3-syntax'
-    " NeoBundle 'taichouchou2/html5.vim'
-    NeoBundle 'marijnh/tern_for_vim'
     NeoBundle 'kchmck/vim-coffee-script'
     NeoBundle 'tyru/caw.vim.git' "コメントアウト
     " if_luaが有効ならneocompleteを使う
