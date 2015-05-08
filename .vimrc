@@ -38,7 +38,10 @@ NeoBundleCheck
 "-------------------------
 " Start Color Settings.
 "-------------------------
-colorscheme jellybeans
+" colorscheme jellybeans
+let g:hybrid_use_iTerm_colors = 1
+colorscheme hybrid
+syntax on
 "-------------------------
 " End Color Settings.
 "-------------------------
